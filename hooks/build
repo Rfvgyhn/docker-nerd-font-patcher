@@ -6,4 +6,4 @@
 docker build \
     --build-arg CREATED=`date -u -Iseconds` \
     --build-arg REVISION=`git rev-parse --short HEAD` \
-    -t $(IMAGE_NAME) .
+    -t ${IMAGE_NAME} .
