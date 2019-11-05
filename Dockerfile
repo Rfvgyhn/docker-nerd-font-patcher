@@ -15,12 +15,12 @@ WORKDIR /usr/local/src
 RUN curl -LSs https://github.com/ryanoasis/nerd-fonts/archive/v${VERSION}.tar.gz | \
     tar -xzvf - --strip-components=1 nerd-fonts-${VERSION}/font-patcher nerd-fonts-${VERSION}/src/glyphs
 
-RUN mkdir -p /input /output
+RUN touch /input && \
+    mkdir -p /output
 
 COPY run.sh .
 RUN chmod +x run.sh
 
-VOLUME /input
 VOLUME /output
 
 ARG CREATED
