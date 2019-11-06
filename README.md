@@ -16,7 +16,7 @@ Batch Fonts:
 ```
 for f in "$FONTS_DIR"/*.ttf; do
     [ -e "$f" ] || continue
-    docker run --rm -v "$f":/input -v $(pwd)/output:/output --user $(id -u) rfvgyhn/nerd-font-patcher --complete --mono --adjust-line-height --careful -ext "${f#*.}"
+    docker run --rm -v "$f":/input -v $(pwd)/output:/output --user $(id -u) rfvgyhn/nerd-font-patcher --complete --mono --adjust-line-height --careful -ext "${f##*.}"
 done
 ```
 
